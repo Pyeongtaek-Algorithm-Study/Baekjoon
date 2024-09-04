@@ -37,7 +37,8 @@
 <pre><code>
 ### 0000번: 0000
 
-문제 사이트 : [바로가기](https://www.acmicpc.net/problem/0000)
+1. **문제 사이트** : [바로가기](https://www.acmicpc.net/problem/0000)
+2. **도움 블로그** : 
 
 **문제 조건**
 - 문제 조건과 관련한 것 서술
