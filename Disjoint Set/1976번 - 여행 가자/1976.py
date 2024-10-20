@@ -18,6 +18,7 @@ def union(x, y):
         parents[x] = y
     else: 
         parents[y] = x
+    
 
 def solve():
     for i in range(1, n + 1):
@@ -27,14 +28,12 @@ def solve():
                 union(i, j)
     
     plan = list(map(int, input().split()))
-    start = plan[0]
     flag = True
-    for p in plan[1:]:
-        if(find(start) != find(p)):
+    for i in range(len(plan) - 1):
+        if(parents[plan[i]] != parents[plan[i + 1]]):
             flag = False
             break
     print("YES" if flag else "NO")
-
 
 if __name__ == '__main__':
     solve()
