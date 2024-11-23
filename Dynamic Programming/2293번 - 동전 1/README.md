@@ -27,7 +27,7 @@ dp[k]의 값이 달라짐
 dp[k] = dp[k-coin[i]]
 
 
-dp[4] = dp[4]+ dp[4-coin
+dp[4] = dp[4]+ dp[4-coin]
 
 ### 핵심 코드
 
