@@ -28,14 +28,7 @@ void recursive(string num, int arr[10]) {
     for(int i = 0; i < 10; i++) {
         if(arr[i]) continue;
         
-        if(k[len] == '>' && num[len] - '0' > i) {
-            num += to_string(i);
-            arr[i] = 1;
-            recursive(num, arr);
-            arr[i] = 0;
-            num = num.substr(0, num.length() - 1);
-        }
-        else if(k[len] == '<' && num[len] - '0' < i) {
+        if((k[len] == '>' && num[len] - '0' > i) || (k[len] == '<' && num[len] - '0' < i)) {
             num += to_string(i);
             arr[i] = 1;
             recursive(num, arr);
