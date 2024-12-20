@@ -10,9 +10,7 @@ vector<int> res;
 void input() {
     cin >> n;
     for(int i = 1; i <= n; i++) {
-        int tmp;
-        cin >> tmp;
-        arr[1][i] = tmp;
+        cin >> arr[1][i];
     }
 }
 
