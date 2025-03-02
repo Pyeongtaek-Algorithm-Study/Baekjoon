@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include <unordered_map>
 
 using namespace std;
@@ -6,9 +7,25 @@ using namespace std;
 #define LIM 200001
 
 int tc, f;
+vector<pair<string, string> > con;
 unordered_map<string, int> fr;
 unordered_map<int, int> p_cnt;
 int parents[LIM];
+
+void input() {
+    fr.clear();
+    p_cnt.clear();
+    con.clear();
+    
+    for(int i = 0; i <= LIM; i++) parents[i] = i;
+    
+    cin >> f;
+    for(int i = 0; i < f; i++) {
+        string a_fr, b_fr;
+        cin >> a_fr >> b_fr;
+        con.push_back({a_fr, b_fr});
+    }
+}
 
 int Find(int a) {
     if(a == parents[a]) return a;
@@ -24,35 +41,35 @@ void Union(int a, int b) {
     }
 }
 
+void solve() {
+    int s = 0;
+    
+    for(pair<string, string> &p : con) {
+        string a = p.first;
+        string b = p.second;
+        
+        if(fr.count(a) == 0) {
+            fr.insert({a, s});
+            p_cnt.insert({s++, 1});
+        }
+        if(fr.count(b) == 0) {
+            fr.insert({b, s});
+            p_cnt.insert({s++, 1});
+        }
+        Union(fr[a], fr[b]);
+        
+        cout << p_cnt[Find(fr[a])] << '\n';
+    }
+}
+
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
     
     cin >> tc;
     while(tc--) {
-        fr.clear();
-        p_cnt.clear();
-        int s = 0;
-        
-        cin >> f;
-        for(int i = 0; i <= LIM; i++) parents[i] = i;
-        
-        for(int i = 0; i < f; i++) {
-            string a_fr, b_fr;
-            cin >> a_fr >> b_fr;
-            if(fr.count(a_fr) == 0) {
-                fr.insert({a_fr, s});
-                p_cnt.insert({s++, 1});
-            }
-            if(fr.count(b_fr) == 0) {
-                fr.insert({b_fr, s});
-                p_cnt.insert({s++, 1});
-            }
-            
-            Union(fr[a_fr], fr[b_fr]);
-            
-            cout << p_cnt[Find(fr[a_fr])] << '\n';
-        }
+        input();
+        solve();
     }
     
     return 0;
