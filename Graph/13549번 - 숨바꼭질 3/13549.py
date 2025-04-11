@@ -19,9 +19,7 @@ def solve(n, k):
             print(vis[cur])
         
         for nxt in [cur - 1, cur + 1, cur * 2]:
-            if nxt < 0 or nxt >= LIM:
-                continue
-            if vis[nxt] != -1:
+            if (nxt < 0 or nxt >= LIM) or vis[nxt] != -1:
                 continue
             
             if nxt == cur * 2:
