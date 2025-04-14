@@ -51,7 +51,7 @@ def solve():
         
         dp[des] = min(dp[des], dp[src] + cost)
         
-        for j in range(src + 1, d + 1):
+        for j in range(des + 1, d + 1):
             dp[j] = min(dp[j], dp[j - 1] + 1)
     
     print(dijkstra())

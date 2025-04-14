@@ -30,7 +30,7 @@ void solve() {
     for(auto &it : v) {
         dp[it[0]] = min(dp[it[0]], dp[it[1]] + it[2]);
         
-        for(int j = it[1] + 1; j <= d; j++) {
+        for(int j = it[0] + 1; j <= d; j++) {
             dp[j] = min(dp[j], dp[j - 1] + 1);
         }
     }
