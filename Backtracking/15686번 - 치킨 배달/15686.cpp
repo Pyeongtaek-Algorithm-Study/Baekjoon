@@ -65,6 +65,8 @@ void backtracking(int cnt, int cur) {
         }
 
         ans = min(ans, distance);
+
+        return;
     }
     
     for(int nxt = cur; nxt < chicken.size(); nxt++) {
