@@ -1,32 +1,55 @@
-import sys
-sys.setrecursionlimit(10**7)
+#include <iostream>
+#include <vector>
 
-input = sys.stdin.readline
+using namespace std;
 
-n = int(input())
-bridges = [tuple(map(int, input().split())) for _ in range(n - 2)]
-parents = list(range(n + 1))
+int n;
+vector<pair<int, int> > bridges;
+int parents[300001];
 
-def Find(a):
-    if a != parents[a]:
-        parents[a] = Find(parents[a])
-    return parents[a]
-
-def Union(a, b):
-    a = Find(a)
-    b = Find(b)
-    if a != b:
-        parents[b] = a
-
-def solve():
+void input() {
+    cin >> n;
+    for(int i = 0, a, b; i < n - 2; i++) {
+        cin >> a >> b;
+        bridges.push_back({a, b});
+    }
     
-    for a, b in bridges:
-        Union(a, b)
-    
-    for i in range(2, n + 1):
-        if Find(1) != Find(i):
-            print(1, i)
-            break
+    for(int i = 0; i <= n; i++) {
+        parents[i] = i;
+    }
+}
 
-if __name__ == '__main__':
-    solve()
+int Find(int a) {
+    if(a == parents[a]) return a;
+    return parents[a] = Find(parents[a]);
+}
+
+void Union(int a, int b) {
+    a = Find(a);
+    b = Find(b);
+    if(a != b) parents[b] = a;
+}
+
+void solve() {
+    for(auto &bridge : bridges) {
+        if(bridge.first > bridge.second) swap(bridge.first, bridge.second);
+        Union(bridge.first, bridge.second);
+    }
+    
+    for(int i = 2; i <= n; i++) {
+        if(Find(1) != Find(i)) {
+            cout << 1 << ' ' << i << '\n';
+            break;
+        }
+    }
+}
+
+int main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    
+    input();
+    solve();
+    
+    return 0;
+}
