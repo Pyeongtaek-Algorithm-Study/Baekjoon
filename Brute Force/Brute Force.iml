@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/1018번 - 체스판 다시 칠하기" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1182번 - 부분수열의 합" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/17142번 - 연구소 3" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/18111번 - 마인크래프트" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2309번 - 일곱 난쟁이" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2798번 - 블랙잭" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

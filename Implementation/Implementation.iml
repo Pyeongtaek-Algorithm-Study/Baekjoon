@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/11723번 - 집합" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1652번 - 누울 자리를 찾아라" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2669번 - 직사각형 네개의 합집합의 면적 구하기" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/9017번 - 크로스 컨트리" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
